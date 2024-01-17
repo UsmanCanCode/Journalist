@@ -1,0 +1,12 @@
+{% extends "Base.html" %}
+{% block content %}
+    <h1>Articles By {{author_name}}</h1>
+    {% if twitter_profile %}
+    <h2>Social Profile: <a href="{{twitter_profile}}">Twitter</a></h2>
+    {% endif %}
+    <ul>
+        {% for (title, url, author_id) in articles %}
+        <li><a href="{{url}}">{{ title }}</a></li>
+        {% endfor %}
+    </ul>
+{% endblock %}

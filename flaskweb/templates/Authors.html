@@ -1,0 +1,19 @@
+{% extends "Base.html" %}
+{% block content %}
+    <h1>Authors</h1>
+    <ul>
+        {% for (id, author_name, profile_url, twitter_url, news_site) in authors %}
+        <li><a href="{{profile_url}}">{{ author_name }}</a>
+            <span>FROM: {{news_site.lower()}}</span>
+            <span>
+            <a
+            href="{{url_for('articles.articles', author_id=id, author_name=author_name, twitter_profile=twitter_url)}}">
+            Articles</a>
+            </span>
+            {% if twitter_url %}
+            <span>Profile: <a href="{{twitter_url}}">Twitter</a></span>
+            {% endif %}
+        </li>
+        {% endfor %}
+    </ul>
+{% endblock %}
