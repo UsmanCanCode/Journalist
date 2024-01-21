@@ -1,3 +1,5 @@
+FIND A JOURNALIST
+
 A simple web app that is build using Scrapy and Flask to collect authors and their articles from famous new sites.
 
 The scrapy library is used to build spiders that crawl news site and collect data and store them in MySQL database. The scrapy setup is stored in SiteSpiders folder and each spider has its own setup for example cnn_spider.py crawl the cnn website. MySQL database store the items in two tables authors and articles using scrapy item pipelines the database is populated. There is one-to-many relation between the authors.id and articles.author_id. 
