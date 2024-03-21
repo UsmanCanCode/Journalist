@@ -26,8 +26,7 @@ def create_app(test_config=None):
     from . import db
     db.init_app(app)
 
-
-    # a simple page that says hello
+    # register the blueprint for route access on app
     from . import authors, articles
     app.register_blueprint(authors.bp)
     app.register_blueprint(articles.bp)
